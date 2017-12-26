@@ -11,7 +11,7 @@ echo "<form role='search' action='search.php'>";
 echo "</form>";
 // create product button
 echo "<div class='right-button-margin'>";
-    echo "<a href='create_product.php' class='btn btn-primary pull-right'>";
+    echo "<a href='create-product.php' class='btn btn-primary pull-right'>";
         echo "<span class='glyphicon glyphicon-plus'></span> Create Product";
     echo "</a>";
 echo "</div>";
@@ -38,11 +38,11 @@ if($total_rows>0){
                 echo "</td>";
                 echo "<td>";
                     // read product button
-                    echo "<a href='read_one.php?id={$id}' class='btn btn-primary left-margin'>";
+                    echo "<a href='read-one.php?id={$id}' class='btn btn-primary left-margin'>";
                         echo "<span class='glyphicon glyphicon-list'></span> Read";
                     echo "</a>";
                     // edit product button
-                    echo "<a href='update_product.php?id={$id}' class='btn btn-info left-margin'>";
+                    echo "<a href='update-product.php?id={$id}' class='btn btn-info left-margin'>";
                         echo "<span class='glyphicon glyphicon-edit'></span> Edit";
                     echo "</a>";
                     // delete product button

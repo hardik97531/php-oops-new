@@ -11,7 +11,7 @@ $db = $database->getConnection();
 $product = new Product($db);
 $category = new Category($db);
 $page_title = "Create Product";
-include_once "layout_header.php";
+include_once "layout-header.php";
 // contents will be here
 echo "<div class='right-button-margin'>";
     echo "<a href='index.php' class='btn btn-default pull-right'>Read Products</a>";
@@ -85,5 +85,5 @@ if($_POST){
 </form>
 <?php
 // footer
-include_once "layout_footer.php";
+include_once "layout-footer.php";
 ?>

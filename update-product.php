@@ -2,7 +2,7 @@
 // retrieve one product will be here
 // set page header
 $page_title = "Update Product";
-include_once "layout_header.php";
+include_once "layout-header.php";
 // contents will be here
 echo "<div class='right-button-margin'>";
     echo "<a href='index.php' class='btn btn-default pull-right'>Read Products</a>";
@@ -23,23 +23,19 @@ $category = new Category($db);
 $product->id = $id;
 // read the details of product to be edited
 $product->readOne();
-
 // if the form was submitted
 if($_POST){
- 
     // set product property values
     $product->name = $_POST['name'];
     $product->price = $_POST['price'];
     $product->description = $_POST['description'];
     $product->category_id = $_POST['category_id'];
- 
     // update the product
     if($product->update()){
         echo "<div class='alert alert-success alert-dismissable'>";
             echo "Product was updated.";
         echo "</div>";
     }
- 
     // if unable to update the product, tell the user
     else{
         echo "<div class='alert alert-danger alert-dismissable'>";
@@ -69,21 +65,17 @@ if($_POST){
                 <!-- categories select drop-down will be here -->
                 <?php
 				$stmt = $category->read();
-				 
 				// put them in a select drop-down
 				echo "<select class='form-control' name='category_id'>";
-				 
 				    echo "<option>Please select...</option>";
 				    while ($row_category = $stmt->fetch(PDO::FETCH_ASSOC)){
 				        extract($row_category);
-				 
 				        // current category of the product must be selected
 				        if($product->category_id==$id){
 				            echo "<option value='$id' selected>";
 				        }else{
 				            echo "<option value='$id'>";
 				        }
-				 
 				        echo "$name</option>";
 				    }
 				echo "</select>";
@@ -100,5 +92,5 @@ if($_POST){
 </form>
 <?php
 // set page footer
-include_once "layout_footer.php";
+include_once "layout-footer.php";
 ?>

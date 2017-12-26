@@ -1,7 +1,7 @@
 <?php
 // set page headers
 $page_title = "Read One Product";
-include_once "layout_header.php";
+include_once "layout-header.php";
 // read products button
 echo "<div class='right-button-margin'>";
     echo "<a href='index.php' class='btn btn-primary pull-right'>";
@@ -55,5 +55,5 @@ echo "<table class='table table-hover table-responsive table-bordered'>";
 echo "</tr>";
 echo "</table>";
 // set footer
-include_once "layout_footer.php";
+include_once "layout-footer.php";
 ?>
