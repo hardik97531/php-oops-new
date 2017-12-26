@@ -39,19 +39,19 @@ if($_POST){
 }
 ?>
  <!-- HTML form for creating a product -->
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="create-product" method="post" enctype="multipart/form-data">
     <table class='table table-hover table-responsive table-bordered'>
         <tr>
             <td>Name</td>
-            <td><input type='text' name='name' class='form-control' /></td>
+            <td><input type='text' name='name' class='form-control' data-msg-required="Enter product name" required /></td>
         </tr>
         <tr>
             <td>Price</td>
-            <td><input type='text' name='price' class='form-control' /></td>
+            <td><input type='text' name='price' class='form-control' data-msg-required="Enter price" required /></td>
         </tr>
         <tr>
             <td>Description</td>
-            <td><textarea name='description' class='form-control'></textarea></td>
+            <td><textarea name='description' class='form-control' data-msg-required="Enter description" required></textarea></td>
         </tr>
         <tr>
             <td>Category</td>
@@ -61,8 +61,8 @@ if($_POST){
 				// read the product categories from the database
 				$stmt = $category->read();
 				// put them in a select drop-down
-				echo "<select class='form-control' name='category_id'>";
-				    echo "<option>Select category...</option>";
+				echo "<select class='form-control' name='category_id' data-msg-required='Select category' required>";
+				    echo "<option value=''>Select category...</option>";
 				    while ($row_category = $stmt->fetch(PDO::FETCH_ASSOC)){
 				        extract($row_category);
 				        echo "<option value='{$id}'>{$name}</option>";
@@ -73,7 +73,7 @@ if($_POST){
         </tr>
         <tr>
             <td>Photo</td>
-            <td><input type="file" name="image" /></td>
+            <td><input type="file" name="image" data-msg-required='Select Photo' required /></td>
         </tr>
         <tr>
             <td></td>

@@ -42,21 +42,21 @@ class Product{
     }
     function readAll($from_record_num, $records_per_page){
         $query = "SELECT id, name, description, price, category_id FROM " . $this->table_name . "  ORDER BY name ASC LIMIT {$from_record_num}, {$records_per_page}";
-        $stmt = $this->conn->prepare( $query );
+        $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt;
     }
     // used for paging products
     public function countAll(){
         $query = "SELECT id FROM ".$this->table_name;
-        $stmt = $this->conn->prepare( $query );
+        $stmt = $this->conn->prepare($query);
         $stmt->execute();
         $num = $stmt->rowCount();
         return $num;
     }
     function readOne(){
         $query = "SELECT name, price, description, category_id, image FROM " . $this->table_name . " WHERE id = ? LIMIT 0,1";
-        $stmt = $this->conn->prepare( $query );
+        $stmt = $this->conn->prepare($query);
         $stmt->bindParam(1, $this->id);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -103,7 +103,7 @@ class Product{
         // select query
         $query = "SELECT c.name as category_name, p.id, p.name, p.description, p.price, p.category_id, p.created FROM " . $this->table_name . " p LEFT JOIN categories c ON p.category_id = c.id WHERE p.name LIKE ? OR p.description LIKE ? ORDER BY p.name ASC LIMIT ?, ?";
         // prepare query statement
-        $stmt = $this->conn->prepare( $query );
+        $stmt = $this->conn->prepare($query);
         // bind variable values
         $search_term = "%{$search_term}%";
         $stmt->bindParam(1, $search_term);
@@ -119,7 +119,7 @@ class Product{
         // select query
         $query = "SELECT COUNT(*) as total_rows FROM " . $this->table_name . " p LEFT JOIN categories c ON p.category_id = c.id WHERE p.name LIKE ?";
         // prepare query statement
-        $stmt = $this->conn->prepare( $query );
+        $stmt = $this->conn->prepare($query);
         // bind variable values
         $search_term = "%{$search_term}%";
         $stmt->bindParam(1, $search_term);

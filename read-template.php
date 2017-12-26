@@ -39,15 +39,15 @@ if($total_rows>0){
                 echo "<td>";
                     // read product button
                     echo "<a href='read-one.php?id={$id}' class='btn btn-primary left-margin'>";
-                        echo "<span class='glyphicon glyphicon-list'></span> Read";
+                        echo "<span class='glyphicon glyphicon-search'></span>";
                     echo "</a>";
                     // edit product button
                     echo "<a href='update-product.php?id={$id}' class='btn btn-info left-margin'>";
-                        echo "<span class='glyphicon glyphicon-edit'></span> Edit";
+                        echo "<span class='glyphicon glyphicon-edit'></span>";
                     echo "</a>";
                     // delete product button
                     echo "<a delete-id='{$id}' class='btn btn-danger delete-object'>";
-                        echo "<span class='glyphicon glyphicon-remove'></span> Delete";
+                        echo "<span class='glyphicon glyphicon-remove'></span>";
                     echo "</a>";
                 echo "</td>";
             echo "</tr>";
