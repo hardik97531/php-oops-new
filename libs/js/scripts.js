@@ -28,3 +28,4 @@ $(document).on('click', '.delete-object', function(){
     });
     return false;
 });
+$('select').select2();

@@ -7,6 +7,7 @@
         <!-- bootbox library -->
         <script type="text/javascript" src="libs/js/bootbox.min.js"></script>
         <script type="text/javascript" src="libs/js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="libs/js/select2.full.min.js"></script>
         <script type="text/javascript" src="libs/js/scripts.js"></script>
     </body>
 </html>

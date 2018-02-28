@@ -7,9 +7,10 @@
         <title><?php echo $page_title; ?></title>
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
         <!-- Latest compiled and minified Bootstrap CSS -->
-        <link rel="stylesheet" href="libs/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="libs/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="libs/css/select2.min.css" />
         <!-- our custom CSS -->
-        <link rel="stylesheet" href="libs/css/custom.css" />
+        <link rel="stylesheet" type="text/css" href="libs/css/custom.css" />        
     </head>
     <body>
         <!-- container -->
